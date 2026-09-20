@@ -1,0 +1,59 @@
+Loan Prediction Dataset Analysis Report
+Introduction
+In this project, the Loan Prediction dataset is analyzed to identify the key factors that influence loan approval decisions. The dataset includes important attributes such as applicant income, education level, employment status, loan amount, and property area, which play a significant role in determining eligibility.
+The main objective of this analysis is to perform data preprocessing, explore patterns through visualizations, and understand the relationships between different variables. Techniques such as distribution analysis, correlation analysis, encoding, and scaling are applied to prepare the dataset for future machine learning models. This process helps in building a strong foundation for developing accurate and reliable loan prediction systems.
+
+  About the Dataset
+The Loan Prediction dataset contains information about loan applicants and is used to predict whether a loan will be approved or not. It includes a mix of demographic, financial, and property-related details that help in understanding applicant profiles.
+The dataset consists of both categorical and numerical features such as Gender, Married status, Dependents, Education, Self_Employed status, Applicant Income, Coapplicant Income, Loan Amount, Loan Term, Credit History, and Property Area. The target variable is Loan_Status, which indicates whether the loan is approved (Y) or not approved (N).
+This dataset is widely used for data analysis and machine learning tasks, as it provides a good balance of features for performing preprocessing, visualization, and predictive modeling.
+Data Preprocessing
+Data preprocessing is an important step to clean and prepare the dataset for analysis and modeling. In this project, missing values were identified and handled using appropriate techniques.
+
+🔹 Missing Values in the Dataset
+Several columns in the dataset contain missing values. These include Gender (13 values), Married (3 values), Dependents (15 values), Self_Employed (32 values), LoanAmount (22 values), Loan_Amount_Term (14 values), and Credit_History (50 values). Other columns such as Loan_ID, Education, ApplicantIncome, CoapplicantIncome, Property_Area, and Loan_Status do not contain missing values.
+🔹 Methods Used for Handling Missing Values
+Different methods were applied based on the type of data:
+•	For categorical columns such as Gender, Married, Dependents, and Self_Employed, missing values were filled using the mode (most frequent value). 
+•	For numerical columns such as LoanAmount and Loan_Amount_Term, missing values were filled using the median value. 
+•	The Credit_History column was also filled using the mode, as it represents a categorical and important feature.
+•	🔹 Reason for Choosing These Methods
+•	The mode is used for categorical data because it preserves the most common category and maintains consistency in the dataset.
+•	Density plots were used to understand the distribution of numerical data. The plots showed that variables like LoanAmount and Loan_Amount_Term are skewed, indicating the presence of extreme values (outliers). Based on this observation, suitable methods were chosen for handling missing values.
+ 
+
+📊 Univariate Analysis
+Univariate analysis focuses on individual variables. Distribution plots showed that numerical features are skewed, while boxplots helped identify outliers in income and loan amount. This analysis helps understand the spread and behavior of each variable.
+
+📊 Bivariate Analysis
+Bivariate analysis studies the relationship between two variables. Scatterplots and correlation analysis showed relationships between income and loan amount. Groupby analysis revealed patterns such as higher loan approval rates for applicants with good credit history.
+Data Analysis:
+2. Box Plot (Outliers Detection)
+•	Income and Loan Amount show many outliers
+•	Extreme values are present especially in Applicant Income
+  
+
+Scatter Plot
+•	Applicant Income vs Loan Amount → slight positive relationship
+•	Coapplicant Income vs Loan Amount → very weak relationship
+  
+
+Correlation Heatmap
+•	Applicant Income & Loan Amount → moderate correlation
+•	Other variables → weak correlation
+
+
+ 
+Bar Charts (Categorical Analysis)
+•	Education vs Loan Status: Graduates have more approvals
+•	Property Area vs Loan Status: Semiurban areas have highest approvals
+
+
+ 
+Encoding
+•	Applied Label Encoding to convert categorical data into numeric form
+•	Columns encoded: Gender, Married, Dependents, Education, Self_Employed, Property_Area, Loan_Status
+📏 Scaling
+•	Used MinMaxScaler to normalize features between 0 and 1
+•	Helps improve model performance and ensures all variables are on the same scale
+
